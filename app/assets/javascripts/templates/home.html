@@ -1,2 +1,28 @@
 <h1>Bootstrap starter template</h1>
 <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+
+<div ng-controller="MainCtrl">
+
+  <div class="input-append">
+    <input class="span2" ng-model="query" type="text">
+    <button class="btn" type="button" ng-click="search(query)">Search!</button>
+  </div>
+
+  <div ng-repeat="place in places">
+
+   <h4>{{place.name}}</h4>
+    <img ng-src="{{place.categories[0].icon}}">
+    <span class="label label-info">{{place.categories[0].name}}</span>
+    <br>
+    <address>
+    {{place.location.address}}<br>
+    {{place.location.crossStreet}}<br>
+    <strong>{{place.location.city}}</strong><br>
+    <abbr title="Phone">P:</abbr> {{place.contact.formattedPhone}}
+    </address>
+
+    <!-- {{place}} -->
+
+  </div>
+
+</div>

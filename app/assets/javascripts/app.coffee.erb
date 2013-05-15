@@ -1,5 +1,19 @@
 rsApp = angular.module('rsApp', ['ngResource', 'rails', 'ui', 'ui.bootstrap'])
 
+rsApp.factory "Place", ["railsResourceFactory", (railsResourceFactory) ->
+  railsResourceFactory
+    url: "/api/places"
+    name: "place"
+]
+
+
+rsApp.controller "MainCtrl", ["$scope", "$http", "Place", "$routeParams", "$location", ($scope, $http, Place, $routeParams, $location) ->
+  $scope.search = (query) ->
+    Place.query(q: query).then((places) ->
+      $scope.places = places.groups[0].items
+    )
+]
+
 rsApp.config ["$locationProvider", "$routeProvider", ($locationProvider, $routeProvider) ->
   $locationProvider.html5Mode(true).hashPrefix('!')
   $routeProvider.when("/",
