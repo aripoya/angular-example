@@ -1,0 +1,12 @@
+rsApp = angular.module('rsApp', ['ngResource', 'rails', 'ui', 'ui.bootstrap'])
+
+rsApp.config ["$locationProvider", "$routeProvider", ($locationProvider, $routeProvider) ->
+  $locationProvider.html5Mode(true).hashPrefix('!')
+  $routeProvider.when("/",
+    templateUrl: "<%= asset_path 'templates/home.html' %>"
+  ).otherwise redirectTo: "/"
+]
+
+
+
+

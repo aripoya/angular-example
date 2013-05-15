@@ -1,0 +1,15 @@
+rsApp.factory "User", ["railsResourceFactory", (railsResourceFactory) ->
+  railsResourceFactory
+    url: "/api/users"
+    name: "user"
+]
+
+rsApp.directive "cbNav", ->
+  {
+    restrict: 'E'
+    templateUrl:"<%= asset_path 'angular/partials/directives/menu.html' %>"
+  }
+
+rsApp.filter "toSlug", ->
+  (str) ->
+    str.toLowerCase()
