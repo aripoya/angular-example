@@ -26,6 +26,9 @@ gem "angularjs-rails-resource"
 gem 'angular-ui-rails'
 gem 'angular-ui-bootstrap-rails'
 
+# Apis
+gem 'foursquare2'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

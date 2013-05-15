@@ -1,4 +1,8 @@
 Rsapp::Application.routes.draw do
+  namespace :api do
+    resources :places
+  end
+
   root 'home#index'
   get '*path' => "home#index"
   # Example of regular route:
