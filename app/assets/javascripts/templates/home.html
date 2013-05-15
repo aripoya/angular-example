@@ -1,2 +1,14 @@
-<h1>Bootstrap starter template</h1>
-<p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+<div ng-controller="MainCtrl">
+
+  <div>
+    <input type="text" ng-model="newUser.name">
+    Married? <input type="checkbox" ng-model="newUser.married">
+  </div>
+
+  <div>
+    <button ng-click="addUser(newUser)">Save User</button>
+  </div>
+
+  <p ng-repeat="user in users">{{title(user)}} {{user.name}}</p>
+
+</div>
